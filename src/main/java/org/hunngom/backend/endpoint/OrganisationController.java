@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 @RestController
 @RequiredArgsConstructor
@@ -19,8 +17,7 @@ public class OrganisationController {
 
     @GetMapping("/organisations")
     public List<Organisation> all() {
-        return StreamSupport.stream(organisationRepository.findAll().spliterator(), false)
-                .collect(Collectors.toList());
+        return organisationRepository.findAll();
     }
 
     @GetMapping("/organisations/{id}")

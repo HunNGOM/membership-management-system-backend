@@ -1,0 +1,10 @@
+type Organisation {
+    id: ID!,
+    name: String!,
+    central: Boolean,
+    address: String
+}
+type Query {
+    organisations(count: Int):[Organisation]
+    organisation(id: ID):Organisation
+}
