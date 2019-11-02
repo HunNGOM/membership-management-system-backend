@@ -4,7 +4,19 @@ type Organisation {
     central: Boolean,
     address: String
 }
+
+type Person {
+    id: ID!,
+    name: String!,
+    birthDay: Int,
+    address: String,
+    email: String,
+    phone: String
+}
+
 type Query {
     organisations(count: Int):[Organisation]
     organisation(id: ID):Organisation
+    persons(count: Int):[Person]
+    person(id: ID):Person
 }

@@ -1,8 +1,8 @@
 package org.hunngom.backend.repository;
 
 import org.hunngom.backend.domain.MembershipType;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface MembershipTypeRepository extends CrudRepository<MembershipType, Long> {
+public interface MembershipTypeRepository extends JpaRepository<MembershipType, Long> {
 
 }

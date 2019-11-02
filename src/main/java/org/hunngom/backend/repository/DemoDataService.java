@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.hunngom.backend.domain.MembershipType;
 import org.hunngom.backend.domain.Office;
 import org.hunngom.backend.domain.Organisation;
+import org.hunngom.backend.domain.Person;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -17,6 +18,7 @@ public class DemoDataService {
     private MembershipTypeRepository membershipTypeRepository;
     private OfficeRepository officeRepository;
     private OrganisationRepository organisationRepository;
+    private PersonRepository personRepository;
 
     @PostConstruct
     public void init() {
@@ -42,6 +44,9 @@ public class DemoDataService {
         for (Organisation organisation : organisationRepository.findAll()) {
             log.info("{}", organisation);
         }
+
+        personRepository.save(new Person(null, "Gipsz Jakab", 19750101, "1234 Budapest, Varjú u. 3", "g.jakab@gmail.com", "+36701234567"));
+        personRepository.save(new Person(null, "Nagy Ede", 19771202, "1224 Budapest, Sas u. 123", "ne@gmail.com", "+36201111111"));
 
     }
 
